@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* COMMON */
@@ -66,33 +66,109 @@ body{
 
 
 .container-fluid {
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
     height: 100vh;
+}
+
+main .sidebar{
+    background-color: black;
+    color: grey;
+    width: 300px;
+    height: calc(100vh - 100px);
+    font-weight: bold;
+    font-size: 0.8em;
+    float: left;
+    position: relative;
+}
+
+main .sidebar .logo,
+main .sidebar .svg-icon,
+main .sidebar h3,
+main .sidebar .fas,
+main .sidebar .name-playlist,
+main .sidebar .info-bottom hr,
+main .sidebar .info-bottom .profile{
+    margin-left: 20px;
+}
+
+main .sidebar .info-bottom .download{
+    margin-left: 15px
+}
+
+main .sidebar .logo{
+    padding: 15px 0;
+    height: 100px;
+}
+
+main .sidebar .logo img{
+    width: 60%;
+}
+
+main .sidebar .svg-icon{
+    padding: 2px 0;
+}
+
+main .sidebar .svg-icon img,
+main .sidebar .profile img{
+    width: 13%;
+    padding-right: 4px ;
+}
+
+main .sidebar h3{
+    padding: 20px 0 5px 0;
+}
+
+main .sidebar .fa-plus-square{
+    font-size: 2.5em;
+    padding: 4px 10px 4px 0;
+}
+
+main .sidebar .name-playlist{
+    padding: 12px 0;
+}
+
+main .sidebar .info-bottom{
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    width: calc(300px - 20px);
+}
+
+main .sidebar .download img{
+    width: 11%;
+    padding: 0 4px 0 0;
+}
+
+main .sidebar hr {
+    width: 90%;
+    margin: 0 auto;
+    margin: 7px 0 7px ;
+}
+
+main .sidebar .profile img{
+    width: 10%;
+    border-radius: 50%;
+    background-color: grey;
+    padding: 2px;
+    margin: 6px 5px 6px 0;
+    line-height: 30px;
 }
 
 .container{
     background-color: midnightblue;
     width: calc(100vw - 300px);
-    height: calc(100vh - 80px);
+    height: calc(100vh - 100px);
     float: left;
 }
 
 .upgrade{
     width: 100%;
-    height: 80px;
+    height: 100px;
     background-color: grey;
 }
 
-main nav{
-    background-color: black;
-    height: calc(100vh - 80px);
-    width: 300px;
-    float: left;
-}
-
 footer{
-    height: 80px;
+    height: 100px;
     width: 100vw;
     background-color: darkslategray;
     position: fixed;

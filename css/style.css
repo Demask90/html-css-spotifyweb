@@ -66,51 +66,53 @@ body{
 
 
 .container-fluid {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
 main .sidebar{
+    position: relative;
     background-color: black;
     color: grey;
-    width: 300px;
-    height: calc(100vh - 100px);
+    width: 250px;
+    height: calc(100vh - 90px);
     font-weight: bold;
     font-size: 0.8em;
     float: left;
-    position: relative;
 }
 
-main .sidebar .logo,
-main .sidebar .svg-icon,
-main .sidebar h3,
-main .sidebar .fas,
-main .sidebar .name-playlist,
-main .sidebar .info-bottom hr,
-main .sidebar .info-bottom .profile{
+main .sidebar .info-top,
+main .sidebar .playlist,
+main .sidebar .info-bottom{
     margin-left: 20px;
 }
 
-main .sidebar .info-bottom .download{
-    margin-left: 15px
-}
 
 main .sidebar .logo{
     padding: 15px 0;
-    height: 100px;
+    height: 90px;
 }
 
 main .sidebar .logo img{
     width: 60%;
 }
 
-main .sidebar .svg-icon{
-    padding: 2px 0;
+main .sidebar .svg-icon a{
+    padding: 5px 0;
 }
 
-main .sidebar .svg-icon img,
-main .sidebar .profile img{
-    width: 13%;
+main .active,
+footer .active{
+    text-decoration: none;
+    color: grey;
+}
+
+main .sidebar .active {
+    border-right: 3px solid transparent;
+}
+
+main .sidebar .svg-icon a svg{
+    width: 15%;
     padding-right: 4px;
 }
 
@@ -123,54 +125,97 @@ main .sidebar .fa-plus-square{
     padding: 4px 10px 4px 0;
 }
 
+main .sidebar .playlist{
+    min-height: 280px;
+    overflow-y: auto;
+    padding-top: 5px;
+}
+
 main .sidebar .name-playlist{
-    padding: 12px 0;
+    padding: 7px 0;
+    border-right: 3px solid transparent;
 }
 
 main .sidebar .info-bottom{
-    position: absolute;
-    bottom: 0px;
     background-color: black;
-    width: calc(300px - 20px);
+    overflow-y: hidden;
+    position: absolute;
+    bottom: 0;
 }
 
-main .sidebar .download img{
-    width: 11%;
+main .sidebar .download svg{
     padding: 0 4px 0 0;
 }
 
 main .sidebar hr {
     width: 90%;
-    margin: 0 auto;
-    margin: 7px 0 7px ;
+    margin: 5px 0;
 }
 
-main .sidebar .profile img{
-    width: 10%;
+main .sidebar .profile svg{
     border-radius: 50%;
-    background-color: grey;
-    padding: 2px;
-    margin: 6px 5px 6px 0;
+    background-color: black;
+    margin: 6px 10px 8px 0;
     line-height: 30px;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
 
 /* inizio hover main  */
 
-main .sidebar .svg-icon:hover,
+main .sidebar .svg-icon a:hover,
+main .sidebar .name-playlist a:hover,
+main .sidebar .plus-album a:hover,
 main .sidebar .name-playlist:hover,
-main .sidebar .plus-album:hover,
-main .sidebar .name-playlist:hover,
-main .sidebar .download:hover,
-main .container .top-row .upgrade:hover {
+main .sidebar .download a:hover{
     color: white;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    border-right: 3px solid green;
+}
+
+main .sidebar .svg-icon a svg,
+main .sidebar .info-bottom .download a svg{
+    filter: invert(59%) sepia(1%) saturate(2859%) hue-rotate(0deg) brightness(86%) contrast(84%);
+    width: 15%;
+}
+
+main .sidebar .info-bottom .profile a svg{
+    padding:0 2px;
+    width: 11%;
+    filter: invert(100%) sepia(0%) saturate(3363%) hue-rotate(220deg) brightness(118%) contrast(100%);
+}
+
+
+main .sidebar .svg-icon a:hover svg,
+main .sidebar .info-bottom a:hover svg {
+    filter: none;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+}
+
+main .container .top-row .upgrade:hover {
+    color: green;
     font-size: 1.1em;
     transition-duration: 0.2s;
     transition-timing-function: ease;
+    border: 1px solid green;
 }
 
 main .container .nav-top div:hover{
     border-bottom: 3px solid green;
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    color: white;
+}
+
+main .container-album .albums .box .img-hover-button:hover .fa-play-circle{
+    display:inline-block;
+}
+
+main .container-album .albums .box .img-hover-button:hover .background-effect{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition-duration: 0.2s;
     transition-timing-function: linear;
 }
 
@@ -180,15 +225,15 @@ main .container{
     position: relative;
     float: left;
     background-color: #1D1D1D;
-    width: calc(100vw - 300px);
-    height: calc(100vh - 100px);
+    width: calc(100% - 250px);
+    height: calc(100vh - 90px);
     color: white;
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 main .container .top-row{
     width: 100%;
-    height: 100px;
+    height: 90px;
     background-color: #111111;
 }
 
@@ -197,7 +242,7 @@ main .container .top-row .upgrade{
     border: 1px solid white;
     border-radius: 25px;
     padding: 15px 50px;
-    top: 23px;
+    top: 18px;
     right: 5px;
     transition-duration: 0.2s;
     transition-timing-function: ease;
@@ -219,11 +264,12 @@ main .container-album .albums{
 }
 
 main .container-album h2{
-    margin: 10px 30px;
+    margin: 30px 0 10px 20px;
 }
 
 main .container-album .albums .box{
-    width: calc(100% / 6 - 20px);
+    flex-basis: calc(100% / 6 - 20px);
+    min-width: 200px;
     text-align: center;
     margin: 0 10px;
 }
@@ -240,8 +286,9 @@ main .container-album .albums .box h4{
     padding: 12px 0 5px 0;
 }
 
-main .container-album .albums .box div{
+main .container-album .text-bottom{
     font-size: 0.8em;
+    color: grey;
 }
 
 main .container-album .albums .box .fa-play-circle{
@@ -249,9 +296,10 @@ main .container-album .albums .box .fa-play-circle{
     top: 50%;
     left: 50%;
     transform: translate(-50% , -50%);
-    font-size: 5em;
+    font-size: 4.5em;
     display: none;
     z-index: 1;
+    color: white;
 }
 
 main .container-album .albums .box .background-effect{
@@ -263,30 +311,110 @@ main .container-album .albums .box .background-effect{
     margin: 0 auto;
 }
 
-main .container-album .albums .box .img-hover-button:hover .fa-play-circle{
-    display: inline-block;
+main .container-album .text-bottom1{
+    font-size: 0.8em;
+    color: grey;
+    padding: 0 0 10px 20px;
 }
 
-main .container-album .albums .box .img-hover-button:hover .background-effect{
-    background-color: rgba(0, 0, 0, 0.5);
-    transition-duration: 0.2s;
-    transition-timing-function: linear;
+main .container-album .albums .box .circle .img-hover-button img,
+main .container-album .albums .box .circle .background-effect {
+    border-radius: 50%;
 }
-
-
-
-
-
-
-
-
-
 
 footer{
-    height: 100px;
-    width: 100vw;
-    background-color: darkslategray;
+    height: 90px;
+    width: 100%;
+    background-color: #0D0D0D;
     position: fixed;
     bottom: 0;
 }
 
+.footer-left {
+    height: 90%;
+    color: grey;
+}
+
+.footer-left img{
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+}
+
+.footer-left #text-side-picture {
+    margin: 5px 50px 5px 8px;
+}
+
+.footer-left .fa-heart,
+.footer-left .fa-folder{
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+.footer-central {
+    height: 100%;
+}
+
+.footer-central .fas{
+    color: lightgray;
+    font-size: 1.4em;
+}
+
+.footer-central .far{
+    font-size: 2.5em;
+    color: lightgray;
+}
+
+.footer-central .central-top{
+    width: 20vw;
+    min-width: 150px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.footer-central .central-bottom{
+    width: 30vw;
+    min-width: 250px;
+    margin-top: 5px;
+}
+
+
+.footer-central .central-bottom .progress-bar{
+    border-top: 4px solid transparent;
+    border-radius: 20px;
+    background-color: lightgray;
+    height: 3px;
+    width: 100%;
+}
+
+.footer-right {
+    width: 300px;
+    height: 100%;
+}
+
+.footer-right .progress-bar-volume{
+    border-top: 4px solid transparent;
+    border-radius: 20px;
+    background-color: lightgray;
+    height: 3px;
+    width: 150px;
+}
+
+
+/* inizio hover footer */
+
+.footer-left .far:hover{
+    font-size: 1.4em;
+    color: green;
+}
+
+.footer-central .central-top .fa-play-circle:hover{
+    font-size: 3em;
+}
+
+
+.footer-right .fas:hover{
+    font-size: 1.2em;
+    color: green;
+}
+/* fine hover footer */

@@ -75,7 +75,7 @@ footer .active {
 /* fine COMMON */
 
 main {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -110,11 +110,12 @@ main .sidebar .info-top .logo {
     height: 90px;
 }
 
-main .sidebar .info-top .logo img:first-child {
+main .sidebar .info-top .logo a:first-child {
     width: 60%;
+    filter: invert(57%) sepia(87%) saturate(4379%) hue-rotate(114deg) brightness(109%) contrast(77%);
 }
 
-main .sidebar .info-top .logo img:last-child {
+main .sidebar .info-top .logo a:last-child {
     display: none;
 }
 
@@ -189,7 +190,7 @@ main .container {
     width: calc(100% - 250px);
     height: calc(100% - 90px);
     color: white;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 main .container .top-row {
@@ -383,16 +384,13 @@ footer {
 
 .footer-left .fa-heart,
 .footer-left .fa-folder {
-    padding: 3px;
+    padding: 1.5px;
 }
 
 .footer-central {
     height: 100%;
-}
-
-.footer-central .far {
-    font-size: 2em;
-    color: lightgray;
+    width: 30vw;
+    margin: 0 10px 0 10px;
 }
 
 .footer-central .central-top {
@@ -404,39 +402,34 @@ footer {
 
 .footer-central .fas {
     color: lightgray;
-    padding: 5px;
+    font-size: 1.3em;
 }
 
-.footer-central .fa-random{
-    margin-left: 30px;
+.footer-central .far {
+    font-size: 2.5em;
+    color: lightgray;
+    padding: 4px;
 }
-
-.footer-central .fa-redo{
-    margin-right: 30px;
-} 
-
 
 .footer-central .central-bottom {
     min-width: 20vw;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin: 10px 0; 
     text-align: center;
 }
 
 .footer-central .central-bottom .progress-bar {
-    border-top: 4px solid transparent;
     border-radius: 20px;
     background-color: lightgray;
-    height: 3px;
+    height: 4px;
     width: 100%;
 }
 
 .footer-right {
-    width: 250px;
+    width: 220px;
     height: 100%;
 }
-.footer-right a {
-    padding: 3px;
+.footer-right .fas {
+    padding: 1.5px;
 }
 
 .footer-right .progress-bar-volume {
@@ -450,19 +443,24 @@ footer {
 /* fine footer */
 
 /* inizio hover footer */
-
-.footer-left .far:hover {
+.footer-left .fa-folder:hover,
+.footer-left .fa-heart:hover {
     font-size: 1.2em;
     color: green;
+    padding: 0;
 }
 
 .footer-central .central-top .fa-play-circle:hover{
-    font-size: 2.5em;
+    font-size: 3em;
+    padding: 0;
 }
 
-.footer-right .fas:hover {
+.footer-right .fa-desktop:hover,
+.footer-right .fa-bars:hover,
+.footer-right .fa-volume-up:hover {
     font-size: 1.2em;
     color: green;
+    padding: 0;
 }
 /* fine hover footer */
 

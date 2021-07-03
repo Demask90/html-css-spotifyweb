@@ -129,7 +129,7 @@
         width: 22.5%;
     }
 
-    main .sidebar .info-top .logo img:first-child {
+    main .sidebar .info-top .logo a:first-child {
         width: 90%;
     }
 

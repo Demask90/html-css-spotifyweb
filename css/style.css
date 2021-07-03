@@ -4,30 +4,40 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
 }
 
 /* COMMON */
 
-.float-lt{
+main .active,
+footer .active {
+    text-decoration: none;
+    color: grey;
+}
+
+.float-lt {
     float: left;
 }
 
-.float-rt{
+.float-rt {
     float: right;
 }
 
-.flex{
+.flex {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.flex-col{
+.flex-col {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
 }
 
 .middle {
@@ -64,130 +74,253 @@ body{
 
 /* fine COMMON */
 
-
-.container-fluid {
+main {
     width: 100%;
     height: 100vh;
 }
 
-main .sidebar{
+main .sidebar {
     position: relative;
     background-color: black;
     color: grey;
     width: 250px;
-    height: calc(100vh - 90px);
+    min-height: 600px;
+    height: calc(100% - 90px);
     font-weight: bold;
     font-size: 0.8em;
     float: left;
-}
-
-main .sidebar .info-top,
-main .sidebar .playlist,
-main .sidebar .info-bottom{
-    margin-left: 20px;
-}
-
-
-main .sidebar .logo{
-    padding: 15px 0;
-    height: 90px;
-}
-
-main .sidebar .logo img{
-    width: 60%;
-}
-
-main .sidebar .svg-icon a{
-    padding: 5px 0;
-}
-
-main .active,
-footer .active{
-    text-decoration: none;
-    color: grey;
 }
 
 main .sidebar .active {
     border-right: 3px solid transparent;
 }
 
-main .sidebar .svg-icon a svg{
-    width: 15%;
-    padding-right: 4px;
-}
-
 main .sidebar h3{
     padding: 20px 0 5px 0;
 }
 
-main .sidebar .fa-plus-square{
-    font-size: 2.5em;
-    padding: 4px 10px 4px 0;
+main .sidebar .info-top,
+main .sidebar .playlist,
+main .sidebar .info-bottom {
+    margin-left: 20px;
 }
 
-main .sidebar .playlist{
-    min-height: 280px;
+main .sidebar .info-top .logo {
+    padding: 15px 0;
+    height: 90px;
+}
+
+main .sidebar .info-top .logo img:first-child {
+    width: 60%;
+}
+
+main .sidebar .info-top .logo img:last-child {
+    display: none;
+}
+
+main .sidebar .info-top .svg-icon a {
+    padding: 5px 0;
+}
+
+main .sidebar .info-top .svg-icon a svg,
+main .sidebar .info-bottom .download a svg {
+    filter: invert(59%) sepia(1%) saturate(2859%) hue-rotate(0deg) brightness(86%) contrast(84%);
+}
+
+main .sidebar .info-top .svg-icon a svg {
+    width: 15%;
+    padding-right: 4px;
+}
+
+main .sidebar .playlist {
+    min-height: 300px;
     overflow-y: auto;
     padding-top: 5px;
 }
 
-main .sidebar .name-playlist{
+main .sidebar .playlist .plus-album{
+    padding: 7px 0;
+}
+
+main .sidebar .playlist .fa-plus-square {
+    font-size: 2.5em;
+    padding: 5px 10px 5px 0;
+}
+
+main .sidebar .playlist .name-playlist {
     padding: 7px 0;
     border-right: 3px solid transparent;
 }
 
-main .sidebar .info-bottom{
+main .sidebar .info-bottom {
     background-color: black;
     overflow-y: hidden;
     position: absolute;
     bottom: 0;
 }
 
-main .sidebar .download svg{
+main .sidebar .info-bottom .download svg {
     padding: 0 4px 0 0;
+    width: 15%;
 }
 
-main .sidebar hr {
-    width: 90%;
+main .sidebar .info-bottom hr {
+    width: calc(100% - 20px);
     margin: 5px 0;
 }
 
-main .sidebar .profile svg{
+main .sidebar .info-bottom .profile a svg {
     border-radius: 50%;
     background-color: black;
     margin: 6px 10px 8px 0;
     line-height: 30px;
     transition-duration: 0.4s;
     transition-timing-function: ease;
-}
-
-/* inizio hover main  */
-
-main .sidebar .svg-icon a:hover,
-main .sidebar .name-playlist a:hover,
-main .sidebar .plus-album a:hover,
-main .sidebar .name-playlist:hover,
-main .sidebar .download a:hover{
-    color: white;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
-    border-right: 3px solid green;
-}
-
-main .sidebar .svg-icon a svg,
-main .sidebar .info-bottom .download a svg{
-    filter: invert(59%) sepia(1%) saturate(2859%) hue-rotate(0deg) brightness(86%) contrast(84%);
-    width: 15%;
-}
-
-main .sidebar .info-bottom .profile a svg{
     padding:0 2px;
     width: 11%;
     filter: invert(100%) sepia(0%) saturate(3363%) hue-rotate(220deg) brightness(118%) contrast(100%);
 }
 
 
-main .sidebar .svg-icon a:hover svg,
+main .container {
+    position: relative;
+    float: left;
+    background-color: #1D1D1D;
+    width: calc(100% - 250px);
+    height: calc(100% - 90px);
+    color: white;
+    overflow-y: auto;
+}
+
+main .container .top-row {
+    width: 100%;
+    height: 90px;
+    background-color: #111111;
+}
+
+main .container .top-row .upgrade {
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 15px 50px;
+    top: 18px;
+    right: 5px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+main .container .nav-top {
+    color: grey;
+}
+
+main .container .nav-top div {
+    margin: 20px 8px;
+    padding-bottom: 3px;
+    border-bottom: 3px solid transparent;
+}
+
+main .container-album {
+    width: 100%;
+    height: calc(100% - 90px);
+}
+
+main .container-album .albums {
+    width: 100%;
+    padding: 10px;
+}
+
+main .container-album h2 {
+    margin: 30px 0 10px 20px;
+}
+
+main .container-album .albums .row {
+    flex-basis: calc(100% / 3);
+}
+
+main .container-album .albums .row .box {
+    flex-basis: calc(100% / 2 - 10px);
+    text-align: center;
+    margin: 5px;
+}
+
+main .container-album .albums .row .box .img-hover-button {
+    position: relative;
+    width: 100%;
+}
+
+main .container-album .albums .row .box img {
+    width: 100%;
+}
+
+main .container-album .albums .row .box h4 {
+    padding: 12px 0 5px 0;
+}
+
+main .container-album .row .box .text-bottom {
+    font-size: 0.8em;
+    color: grey;
+}
+
+main .container-album .albums .row .box .img-hover-button .fa-play-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    font-size: 4.5em;
+    display: none;
+    z-index: 1;
+    color: white;
+}
+
+main .container-album .albums .row .box .img-hover-button .background-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+main .container-album .text-bottom-title {
+    font-size: 0.8em;
+    color: grey;
+    padding: 0 0 10px 20px;
+}
+
+main .container-album .albums .row .box .circle{
+    width: 100%;
+}
+
+main .container-album .albums .row .box .circle .img-hover-button img,
+main .container-album .albums .row .box .circle .img-hover-button .background-effect {
+    border-radius: 50%;
+}
+
+/* inizio hover main  */
+
+main .sidebar .info-top .svg-icon a:hover,
+main .sidebar .playlist .name-playlist a:hover,
+main .sidebar .playlist .plus-album a:hover,
+main .sidebar .playlist .name-playlist:hover {
+    color: white;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    border-right: 3px solid green;
+}
+
+main .sidebar .playlist .plus-album:hover .fa-plus-square {
+    color: green;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+}
+
+main .sidebar .info-bottom .download a:hover {
+    color: white;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+}
+
+main .sidebar .info-top .svg-icon a:hover svg,
 main .sidebar .info-bottom a:hover svg {
     filter: none;
     transition-duration: 0.4s;
@@ -202,18 +335,18 @@ main .container .top-row .upgrade:hover {
     border: 1px solid green;
 }
 
-main .container .nav-top div:hover{
+main .container .nav-top div:hover {
     border-bottom: 3px solid green;
     transition-duration: 0.3s;
     transition-timing-function: linear;
     color: white;
 }
 
-main .container-album .albums .box .img-hover-button:hover .fa-play-circle{
+main .container-album .albums .row .box .img-hover-button:hover .fa-play-circle {
     display:inline-block;
 }
 
-main .container-album .albums .box .img-hover-button:hover .background-effect{
+main .container-album .albums .row .box .img-hover-button:hover .background-effect {
     background-color: rgba(0, 0, 0, 0.5);
     transition-duration: 0.2s;
     transition-timing-function: linear;
@@ -221,108 +354,9 @@ main .container-album .albums .box .img-hover-button:hover .background-effect{
 
 /* fine hover main  */
 
-main .container{
-    position: relative;
-    float: left;
-    background-color: #1D1D1D;
-    width: calc(100% - 250px);
-    height: calc(100vh - 90px);
-    color: white;
-    overflow-y: scroll;
-}
+/* inizio footer */
 
-main .container .top-row{
-    width: 100%;
-    height: 90px;
-    background-color: #111111;
-}
-
-main .container .top-row .upgrade{
-    position: absolute;
-    border: 1px solid white;
-    border-radius: 25px;
-    padding: 15px 50px;
-    top: 18px;
-    right: 5px;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-}
-
-main .container .nav-top{
-    color: grey;
-}
-
-main .container .nav-top div{
-    margin: 20px 30px;
-    padding-bottom: 3px;
-    border-bottom: 3px solid transparent;
-}
-
-main .container-album .albums{
-    width: 100%;
-    padding: 10px;
-}
-
-main .container-album h2{
-    margin: 30px 0 10px 20px;
-}
-
-main .container-album .albums .box{
-    flex-basis: calc(100% / 6 - 20px);
-    min-width: 200px;
-    text-align: center;
-    margin: 0 10px;
-}
-
-main .container-album .albums .box .img-hover-button{
-    position: relative;
-}
-
-main .container-album .albums .box img{
-    width: 100%;
-}
-
-main .container-album .albums .box h4{
-    padding: 12px 0 5px 0;
-}
-
-main .container-album .text-bottom{
-    font-size: 0.8em;
-    color: grey;
-}
-
-main .container-album .albums .box .fa-play-circle{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    font-size: 4.5em;
-    display: none;
-    z-index: 1;
-    color: white;
-}
-
-main .container-album .albums .box .background-effect{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-}
-
-main .container-album .text-bottom1{
-    font-size: 0.8em;
-    color: grey;
-    padding: 0 0 10px 20px;
-}
-
-main .container-album .albums .box .circle .img-hover-button img,
-main .container-album .albums .box .circle .background-effect {
-    border-radius: 50%;
-}
-
-footer{
+footer {
     height: 90px;
     width: 100%;
     background-color: #0D0D0D;
@@ -331,55 +365,65 @@ footer{
 }
 
 .footer-left {
+    width: 220px;
     height: 90%;
     color: grey;
 }
 
-.footer-left img{
+.footer-left img {
     width: 60px;
     height: 60px;
-    margin: 10px;
+    margin: 0 6px;
 }
 
-.footer-left #text-side-picture {
-    margin: 5px 50px 5px 8px;
+.footer-left #text-side-picture a div {
+    padding-top: 2px;
+    font-size: 0.8em;
 }
 
 .footer-left .fa-heart,
-.footer-left .fa-folder{
-    padding: 5px;
-    font-size: 1.2em;
+.footer-left .fa-folder {
+    padding: 3px;
 }
 
 .footer-central {
     height: 100%;
 }
 
-.footer-central .fas{
-    color: lightgray;
-    font-size: 1.4em;
-}
-
-.footer-central .far{
-    font-size: 2.5em;
+.footer-central .far {
+    font-size: 2em;
     color: lightgray;
 }
 
-.footer-central .central-top{
+.footer-central .central-top {
+    margin-top: 10px;
     width: 20vw;
-    min-width: 150px;
+    min-width: 170px;
     margin: 0 auto;
-    padding: 10px 0;
 }
 
-.footer-central .central-bottom{
-    width: 30vw;
-    min-width: 250px;
-    margin-top: 5px;
+.footer-central .fas {
+    color: lightgray;
+    padding: 5px;
 }
 
+.footer-central .fa-random{
+    margin-left: 30px;
+}
 
-.footer-central .central-bottom .progress-bar{
+.footer-central .fa-redo{
+    margin-right: 30px;
+} 
+
+
+.footer-central .central-bottom {
+    min-width: 20vw;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.footer-central .central-bottom .progress-bar {
     border-top: 4px solid transparent;
     border-radius: 20px;
     background-color: lightgray;
@@ -388,33 +432,41 @@ footer{
 }
 
 .footer-right {
-    width: 300px;
+    width: 250px;
     height: 100%;
 }
-
-.footer-right .progress-bar-volume{
-    border-top: 4px solid transparent;
-    border-radius: 20px;
-    background-color: lightgray;
-    height: 3px;
-    width: 150px;
+.footer-right a {
+    padding: 3px;
 }
 
+.footer-right .progress-bar-volume {
+    border-radius: 20px;
+    background-color: lightgray;
+    height: 4px;
+    width: 90%;
+    min-width: 120px;
+}
+
+/* fine footer */
 
 /* inizio hover footer */
 
-.footer-left .far:hover{
-    font-size: 1.4em;
+.footer-left .far:hover {
+    font-size: 1.2em;
     color: green;
 }
 
 .footer-central .central-top .fa-play-circle:hover{
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
-
-.footer-right .fas:hover{
+.footer-right .fas:hover {
     font-size: 1.2em;
     color: green;
 }
 /* fine hover footer */
+
+
+
+
+

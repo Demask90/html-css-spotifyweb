@@ -91,8 +91,8 @@ main .sidebar {
     height: calc(100% - 90px);
     font-weight: bold;
     font-size: 0.8em;
-    float: left;
     overflow-y: hidden;
+    float: left;
 }
 
 main .sidebar .active {
@@ -135,6 +135,7 @@ main .sidebar .info-top .svg-icon a svg {
 
 main .sidebar .playlist-bottom {
     height: 100%;
+    overflow: auto;
 }
 
 main .sidebar .playlist{
@@ -142,23 +143,23 @@ main .sidebar .playlist{
 }
 
 main .sidebar .playlist .name{
-    overflow-y: auto;
     min-height: 320px;
 }
 
-main .sidebar .playlist .name .plus-album {
+main .sidebar .plus-album {
     padding: 5px 0;
+    margin-left: 20px;
 }
 
-main .sidebar .playlist .name .active:not(.plus-album) {
+main .sidebar .playlist .name .active {
     padding: 12px 0;
 }
 
-main .sidebar .playlist h3{
-    padding: 15px 0 7px 0;
+main .sidebar h3{
+    padding: 15px 0 7px 20px;
 }
 
-main .sidebar .playlist .fa-plus-square {
+main .sidebar .fa-plus-square {
     font-size: 2.5em;
     padding-right: 5px;
 }
@@ -192,6 +193,7 @@ main .container {
     height: calc(100% - 90px);
     color: white;
     overflow-y: scroll;
+    float: left;
 }
 
 main .container .top-row {
@@ -302,7 +304,7 @@ main .container-album .albums .row .box .circle .img-hover-button .background-ef
 
 main .sidebar .info-top .svg-icon a:hover,
 main .sidebar .playlist .name-playlist a:hover,
-main .sidebar .playlist .plus-album:hover,
+main .sidebar .plus-album:hover,
 main .sidebar .playlist a:hover {
     color: white;
     transition-duration: 0.4s;
@@ -310,7 +312,7 @@ main .sidebar .playlist a:hover {
     border-right: 3px solid green;
 }
 
-main .sidebar .playlist .plus-album:hover .fa-plus-square {
+main .sidebar .plus-album:hover .fa-plus-square {
     color: green;
     transition-duration: 0.4s;
     transition-timing-function: ease;

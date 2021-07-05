@@ -37,6 +37,7 @@
     main .sidebar .info-bottom span,
     main .sidebar .info-bottom hr,
     main .sidebar h3,
+    main .sidebar .plus-album,
     .footer-left a img {
         display: none;
     }
@@ -164,6 +165,7 @@
     main .sidebar .playlist .plus-album,
     main .sidebar .info-bottom span,
     main .sidebar .info-bottom hr,
+    main .sidebar .plus-album,
     main .sidebar h3 {
         display: none;
     }
@@ -323,4 +325,3 @@
     }
 
 }
-

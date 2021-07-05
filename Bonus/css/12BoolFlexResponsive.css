@@ -1,12 +1,11 @@
 @media screen and (max-width: 500px) {
 
     main .container {
-        width: calc(100% - 50px);
+        width: calc(100% - 55px);
     }
 
     main .sidebar {
         width: 50px;
-        height: calc(100% - 90px);
         min-height: 300px;
         margin-left: 0;
     }
@@ -20,7 +19,7 @@
     }
 
     main .sidebar .info-bottom{
-        margin: 5px 0 0 12px;
+        margin: 5px 0 0 15px;
     }
 
     main .sidebar .info-top .logo a:last-child {
@@ -58,6 +57,7 @@
 
     main .sidebar .playlist-bottom {
         justify-content: flex-end;
+        height: calc(100% - 220px);
     }
 
     main .sidebar .info-bottom a svg {
@@ -134,12 +134,11 @@
 
     
     main .container {
-        width: calc(100% - 50px);
+        width: calc(100% - 55px);
     }
 
     main .sidebar {
         width: 50px;
-        height: calc(100% - 90px);
         min-height: 300px;
         margin-left: 0;
     }
@@ -190,10 +189,11 @@
 
     main .sidebar .playlist-bottom {
         justify-content: flex-end;
+        height: calc(100% - 220px);
     }
 
     main .sidebar .playlist-bottom .info-bottom{
-        margin: 5px 0 0 12px;
+        margin: 5px 0 0 15px;
     }
 
     main .sidebar .info-bottom .download svg{
@@ -257,7 +257,7 @@
     }    
 
     main .container {
-        width: calc(100% - 175px);
+        width: calc(100% - 180px);
     }
 
     main .container-album .albums .row {
@@ -302,7 +302,7 @@
     } 
 
     main .container {
-        width: calc(100% - 175px);
+        width: calc(100% - 180px);
     }
 
     main .container-album .albums .row {
@@ -324,4 +324,10 @@
         flex-wrap: nowrap;
     }
 
+}
+
+@media screen and (max-height: 550px){
+    .container .top-row{
+        display: none;
+    }
 }

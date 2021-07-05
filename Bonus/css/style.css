@@ -82,6 +82,7 @@ body {
 main {
     width: 100vw;
     height: 100vh;
+    background-color: black;
 }
 
 main .sidebar {
@@ -92,7 +93,7 @@ main .sidebar {
     font-weight: bold;
     font-size: 0.8em;
     overflow-y: hidden;
-    float: left;
+    display: inline-block;
 }
 
 main .sidebar .active {
@@ -134,7 +135,7 @@ main .sidebar .info-top .svg-icon a svg {
 }
 
 main .sidebar .playlist-bottom {
-    height: 100%;
+    height: calc(100% - 300px);
     overflow: auto;
 }
 
@@ -187,13 +188,12 @@ main .sidebar .info-bottom .profile a svg {
 
 main .container {
     position: relative;
-    float: left;
     background-color: #1D1D1D;
-    width: calc(100% - 250px);
+    width: calc(100% - 255px);
     height: calc(100% - 90px);
     color: white;
     overflow-y: scroll;
-    float: left;
+    display: inline-block;
 }
 
 main .container .top-row {
@@ -365,7 +365,7 @@ footer {
     width: 100%;
     background-color: #0D0D0D;
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
 }
 
 .footer-left {

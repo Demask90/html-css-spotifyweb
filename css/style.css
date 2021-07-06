@@ -287,14 +287,17 @@ main .sidebar .playlist-bottom .name a:hover,
 main .sidebar .plus-album:hover,
 main .sidebar .plus-album:hover .fa-plus-square,
 main .sidebar .info-top .svg-icon a:hover svg,
-main .sidebar .playlist-bottom .info-bottom a:hover svg,
-main .container-album .albums .row .box .img-hover-button:hover .background-effect{
+main .sidebar .playlist-bottom .info-bottom .download a:hover {
     transition-duration: 0.4s;
     transition-timing-function: ease;
 }
 
-main .sidebar .info-top .svg-icon a:hover,
+main .sidebar .playlist-bottom .info-bottom a:hover{
+    color:white;
+}
+
 main .sidebar .playlist-bottom .name a:hover,
+main .sidebar .info-top .svg-icon a:hover,
 main .sidebar .plus-album:hover {
     color: white;
     border-right: 3px solid green;
@@ -315,7 +318,8 @@ main .sidebar .playlist-bottom .info-bottom a:hover svg {
 }
 
 main .container .top-row .upgrade:hover,
-main .container .nav-top div:hover{
+main .container .nav-top div:hover,
+main .container-album .albums .row .box .img-hover-button:hover .background-effect {
     transition-duration: 0.2s;
     transition-timing-function: ease;
 }  

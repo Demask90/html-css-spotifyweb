@@ -85,8 +85,8 @@ main {
 }
 
 main .sidebar {
+    color: white;
     background-color: black;
-    color: grey;
     width: 250px;
     height: calc(100% - 90px);
     font-weight: bold;
@@ -100,13 +100,11 @@ main .sidebar .active {
 }
 
 main .sidebar .info-top,
-main .sidebar .playlist,
-main .sidebar .info-bottom {
+main .sidebar .playlist-bottom {
     margin-left: 20px;
 }
 
 main .sidebar .info-top .logo {
-    padding: 15px 0;
     height: 90px;
 }
 
@@ -130,33 +128,17 @@ main .sidebar .info-bottom .download a svg {
 
 main .sidebar .info-top .svg-icon a svg {
     width: 15%;
-    padding-right: 4px;
-}
-
-main .sidebar .playlist-bottom {
-    height: 100%;
-    overflow: auto;
-}
-
-main .sidebar .playlist{
-    padding-top: 5px;
-}
-
-main .sidebar .playlist .name{
-    min-height: 320px;
-}
-
-main .sidebar .plus-album {
-    padding: 5px 0;
-    margin-left: 20px;
-}
-
-main .sidebar .playlist .name .active {
-    padding: 12px 0;
 }
 
 main .sidebar h3{
-    padding: 15px 0 7px 20px;
+    padding: 15px 0 7px 0;
+    margin-left: 20px;
+}
+
+main .sidebar .plus-album {
+    margin: 5px 0 0 20px;
+    font-size: 1.1em;
+    color: white;
 }
 
 main .sidebar .fa-plus-square {
@@ -164,20 +146,36 @@ main .sidebar .fa-plus-square {
     padding-right: 5px;
 }
 
-main .sidebar .info-bottom .download svg {
-    padding: 0 4px 0 0;
+main .sidebar .playlist-bottom {
+    height: 100%;
+    overflow: auto;
+}
+
+main .sidebar .playlist-bottom .name{
+    min-height: 300px;
+    margin-top: 2px;
+}
+
+main .sidebar .playlist-bottom .name .active {
+    padding: 12px 0;
+}
+
+main .sidebar .playlist-bottom .info-bottom {
+    overflow-y: hidden;
+}
+
+main .sidebar .playlist-bottom .info-bottom .download a svg {
     width: 15%;
 }
 
-main .sidebar .info-bottom hr {
+main .sidebar .playlist-bottom .info-bottom hr {
     margin: 5px 20px 5px 0;
 }
 
-main .sidebar .info-bottom .profile a svg {
+main .sidebar .playlist-bottom .info-bottom .profile a svg {
     border-radius: 50%;
     background-color: black;
-    margin: 6px 10px 8px 0;
-    line-height: 30px;
+    margin: 6px 10px 6px 0;
     transition-duration: 0.4s;
     transition-timing-function: ease;
     padding:0 2px;
@@ -187,17 +185,14 @@ main .sidebar .info-bottom .profile a svg {
 
 main .container {
     position: relative;
-    float: left;
     background-color: #1D1D1D;
     width: calc(100% - 250px);
     height: calc(100% - 90px);
     color: white;
     overflow-y: scroll;
-    float: left;
 }
 
 main .container .top-row {
-    width: 100%;
     height: 90px;
     background-color: #111111;
 }
@@ -213,28 +208,18 @@ main .container .top-row .upgrade {
     transition-timing-function: ease;
 }
 
-main .container .nav-top {
-    color: grey;
-}
-
 main .container .nav-top div {
     margin: 20px 8px;
     padding-bottom: 3px;
     border-bottom: 3px solid transparent;
 }
 
-main .container-album {
-    width: 100%;
-    height: calc(100% - 90px);
-}
-
 main .container-album .albums {
-    width: 100%;
-    padding: 10px;
+    margin: 5px;
 }
 
 main .container-album h2 {
-    margin: 30px 0 10px 20px;
+    margin: 30px 0 10px 10px;
 }
 
 main .container-album .albums .row {
@@ -270,7 +255,7 @@ main .container-album .albums .row .box .img-hover-button .fa-play-circle {
     top: 50%;
     left: 50%;
     transform: translate(-50% , -50%);
-    font-size: 4.5em;
+    font-size: 4em;
     display: none;
     z-index: 1;
     color: white;
@@ -288,10 +273,10 @@ main .container-album .albums .row .box .img-hover-button .background-effect {
 main .container-album .text-bottom-title {
     font-size: 0.8em;
     color: grey;
-    padding: 0 0 10px 20px;
+    padding: 0 0 10px 10px;
 }
 
-main .container-album .albums .row .box .circle{
+main .container-album .albums .row .box .circle {
     width: 100%;
 }
 
@@ -303,9 +288,8 @@ main .container-album .albums .row .box .circle .img-hover-button .background-ef
 /* inizio hover main  */
 
 main .sidebar .info-top .svg-icon a:hover,
-main .sidebar .playlist .name-playlist a:hover,
-main .sidebar .plus-album:hover,
-main .sidebar .playlist a:hover {
+main .sidebar .playlist-bottom .name a:hover,
+main .sidebar .plus-album:hover {
     color: white;
     transition-duration: 0.4s;
     transition-timing-function: ease;
@@ -318,14 +302,14 @@ main .sidebar .plus-album:hover .fa-plus-square {
     transition-timing-function: ease;
 }
 
-main .sidebar .info-bottom .download a:hover {
+main .sidebar .playlist-bottom .info-bottom .download a:hover {
     color: white;
     transition-duration: 0.4s;
     transition-timing-function: ease;
 }
 
 main .sidebar .info-top .svg-icon a:hover svg,
-main .sidebar .info-bottom a:hover svg {
+main .sidebar .playlist-bottom .info-bottom a:hover svg {
     filter: none;
     transition-duration: 0.4s;
     transition-timing-function: ease;
@@ -370,7 +354,6 @@ footer {
 
 .footer-left {
     height: 100%;
-    color: grey;
 }
 
 .footer-left img {
@@ -384,7 +367,7 @@ footer {
     margin: 5px;
 }
 
-.footer-left #text-side-picture a div{
+.footer-left #text-side-picture a div {
     padding: 2.4px;
     font-size: 0.8em;
 }
@@ -418,12 +401,10 @@ footer {
 }
 
 .footer-central .central-bottom {
-    min-width: 18vw;
-    text-align: center;
     margin: 5px 0 10px 0;
 }
 
-.footer-central .central-bottom .time{
+.footer-central .central-bottom .time {
     padding: 0 5px;
     font-size: 0.7em;
     color: lightgray;
@@ -437,6 +418,7 @@ footer {
     min-width: 150px;
 }
 
+.footer-right .volume .progress-bar-volume-mobile .progress-white-mobile,
 .footer-right .volume .progress-bar-volume .progress-white,
 .footer-central .central-bottom .progress-bar .progress-white {
     position: relative;
@@ -447,21 +429,27 @@ footer {
 }
 
 .footer-central .central-bottom .progress-bar .fa-circle {
-    position: absolute;
     right: 0;
     bottom: -3px;
-    display: none;
-    font-size: 0.7em;
-    color: white;
 }
 
 .footer-right .volume .progress-bar-volume .fa-circle {
-    position: absolute;
     right: -5px;
     bottom: -5px;
-    display: none;
+}
+
+.footer-right .volume .progress-bar-volume-mobile .progress-white-mobile .fa-circle,
+.footer-right .volume .progress-bar-volume .fa-circle,
+.footer-central .central-bottom .progress-bar .fa-circle {
+    position: absolute;
     font-size: 0.7em;
     color: white;
+    display: none;
+}
+
+.footer-right .volume .progress-bar-volume-mobile .progress-white-mobile .fa-circle {
+    left: -5px;
+    bottom: 125px;
 }
 
 .footer-right {
@@ -469,11 +457,15 @@ footer {
 }
 
 .footer-right .icon-footer .fa-desktop {
-    margin-left: 8px;
+    margin-left: 6px;
 }
 
 .footer-right .fas {
     padding: 2px;
+}
+
+.footer-right .volume{
+    position: relative;
 }
 
 .footer-right .volume .progress-bar-volume {
@@ -485,9 +477,30 @@ footer {
     margin-right: 5px;
 }
 
+.footer-right .volume .progress-bar-volume-mobile {
+    height: 150px;
+    padding: 7px;
+    border-radius: 2px;
+    background-color:grey;
+    position: absolute;
+    bottom: 43px;
+    left: 3px;
+    display: none;
+}
+
+.footer-right .volume .progress-bar-volume-mobile .progress-white-mobile {
+    position: relative;
+    background-color: lightgray;
+    padding: 2.5px;
+    border-radius: 20px;
+    width: 10%;
+    height: 100%;
+}
+
 /* fine footer */
 
 /* inizio hover footer */
+ 
 .footer-left .fa-folder:hover,
 .footer-left .fa-heart:hover,
 .footer-right .fa-desktop:hover,
@@ -497,21 +510,23 @@ footer {
     color: green;
 }
 
-.footer-central .central-top .fa-play-circle:hover{
+.footer-central .central-top .fa-play-circle:hover {
     font-size: 3em;
     padding: 0;
     color: white;
 }
 
-.footer-central .central-top .fas:hover{
+.footer-central .central-top .fas:hover {
     color: white;
 }
 
+.footer-right .volume .progress-bar-volume-mobile:hover .progress-white-mobile,
 .footer-right .volume .progress-bar-volume:hover .progress-white,
-.footer-central .central-bottom .progress-bar:hover .progress-white{
+.footer-central .central-bottom .progress-bar:hover .progress-white {
     background-color: green;
 }
 
+.footer-right .volume .progress-bar-volume-mobile:hover .fa-circle,
 .footer-right .volume .progress-bar-volume:hover .fa-circle,
 .footer-central .central-bottom .progress-bar:hover .fa-circle {
     display: inline-block;

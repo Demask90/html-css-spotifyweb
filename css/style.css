@@ -214,6 +214,7 @@ main .container .nav-top div {
     border-bottom: 3px solid transparent;
 }
 
+main .container-album .albums .row .box, 
 main .container-album .albums {
     margin: 5px;
 }
@@ -229,14 +230,14 @@ main .container-album .albums .row {
 main .container-album .albums .row .box {
     flex-basis: calc(100% / 2 - 10px);
     text-align: center;
-    margin: 5px;
 }
 
 main .container-album .albums .row .box .img-hover-button {
     position: relative;
-    width: 100%;
 }
 
+main .container-album .albums .row .box .circle,
+main .container-album .albums .row .box .img-hover-button,
 main .container-album .albums .row .box img {
     width: 100%;
 }
@@ -245,6 +246,7 @@ main .container-album .albums .row .box h4 {
     padding: 12px 0 5px 0;
 }
 
+main .container-album .text-bottom-title,
 main .container-album .row .box .text-bottom {
     font-size: 0.8em;
     color: grey;
@@ -270,13 +272,7 @@ main .container-album .albums .row .box .img-hover-button .background-effect {
 }
 
 main .container-album .text-bottom-title {
-    font-size: 0.8em;
-    color: grey;
     padding: 0 0 10px 10px;
-}
-
-main .container-album .albums .row .box .circle {
-    width: 100%;
 }
 
 main .container-album .albums .row .box .circle .img-hover-button img,
@@ -288,45 +284,46 @@ main .container-album .albums .row .box .circle .img-hover-button .background-ef
 
 main .sidebar .info-top .svg-icon a:hover,
 main .sidebar .playlist-bottom .name a:hover,
-main .sidebar .plus-album:hover {
-    color: white;
+main .sidebar .plus-album:hover,
+main .sidebar .plus-album:hover .fa-plus-square,
+main .sidebar .info-top .svg-icon a:hover svg,
+main .sidebar .playlist-bottom .info-bottom a:hover svg,
+main .container-album .albums .row .box .img-hover-button:hover .background-effect{
     transition-duration: 0.4s;
     transition-timing-function: ease;
+}
+
+main .sidebar .info-top .svg-icon a:hover,
+main .sidebar .playlist-bottom .name a:hover,
+main .sidebar .plus-album:hover {
+    color: white;
     border-right: 3px solid green;
+}
+
+main .container .nav-top div:hover{
+    color: white;
+    border-bottom: 3px solid green;
 }
 
 main .sidebar .plus-album:hover .fa-plus-square {
     color: green;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
-}
-
-main .sidebar .playlist-bottom .info-bottom .download a:hover {
-    color: white;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
 }
 
 main .sidebar .info-top .svg-icon a:hover svg,
 main .sidebar .playlist-bottom .info-bottom a:hover svg {
     filter: none;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
 }
+
+main .container .top-row .upgrade:hover,
+main .container .nav-top div:hover{
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}  
 
 main .container .top-row .upgrade:hover {
     color: green;
     font-size: 1.1em;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
     border: 1px solid green;
-}
-
-main .container .nav-top div:hover {
-    border-bottom: 3px solid green;
-    transition-duration: 0.2s;
-    transition-timing-function: linear;
-    color: white;
 }
 
 main .container-album .albums .row .box .img-hover-button:hover .fa-play-circle {
@@ -335,8 +332,6 @@ main .container-album .albums .row .box .img-hover-button:hover .fa-play-circle 
 
 main .container-album .albums .row .box .img-hover-button:hover .background-effect {
     background-color: rgba(0, 0, 0, 0.5);
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
 }
 
 /* fine hover main  */
@@ -351,6 +346,7 @@ footer {
     bottom: 0;
 }
 
+.footer-right,
 .footer-left {
     height: 100%;
 }
@@ -427,6 +423,15 @@ footer {
     border-radius: 20px;
 }
 
+.footer-right .volume .progress-bar-volume-mobile .progress-white-mobile .fa-circle,
+.footer-right .volume .progress-bar-volume .fa-circle,
+.footer-central .central-bottom .progress-bar .fa-circle {
+    position: absolute;
+    font-size: 0.7em;
+    color: white;
+    display: none;
+}
+
 .footer-central .central-bottom .progress-bar .fa-circle {
     right: 0;
     bottom: -3px;
@@ -437,22 +442,9 @@ footer {
     bottom: -5px;
 }
 
-.footer-right .volume .progress-bar-volume-mobile .progress-white-mobile .fa-circle,
-.footer-right .volume .progress-bar-volume .fa-circle,
-.footer-central .central-bottom .progress-bar .fa-circle {
-    position: absolute;
-    font-size: 0.7em;
-    color: white;
-    display: none;
-}
-
 .footer-right .volume .progress-bar-volume-mobile .progress-white-mobile .fa-circle {
     left: -5px;
     bottom: 125px;
-}
-
-.footer-right {
-    height: 100%;
 }
 
 .footer-right .icon-footer .fa-desktop {

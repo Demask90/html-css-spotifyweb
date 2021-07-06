@@ -119,8 +119,6 @@ main .sidebar .info-top .logo a:last-child {
 
 main .sidebar .info-top .svg-icon a {
     padding: 5px 0;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
 }
 
 main .sidebar .info-top .svg-icon a svg,
@@ -141,8 +139,6 @@ main .sidebar .plus-album {
     margin: 5px 0 0 20px;
     font-size: 1.1em;
     color: white;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
 }
 
 main .sidebar .fa-plus-square {
@@ -162,8 +158,6 @@ main .sidebar .playlist .name{
 
 main .sidebar .playlist .name .active {
     padding: 12px 0;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
 }
 
 main .sidebar .playlist .info {
@@ -172,8 +166,6 @@ main .sidebar .playlist .info {
 
 main .sidebar .playlist .info .download a svg {
     width: 15%;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
 }
 
 main .sidebar .playlist .info hr {
@@ -212,16 +204,12 @@ main .container .top-row .upgrade {
     padding: 15px 50px;
     top: 18px;
     right: 5px;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
 }
 
 main .container .nav-top a div {
     margin: 20px 8px;
     padding-bottom: 3px;
     border-bottom: 3px solid transparent;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
 }
 
 main .container-album .albums .row .box, 
@@ -280,8 +268,6 @@ main .container-album .albums .row .box .img-hover-button .background-effect {
     left: 0;
     width: 100%;
     height: 100%;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
 }
 
 main .container-album .text-bottom-title {
@@ -291,6 +277,20 @@ main .container-album .text-bottom-title {
 main .container-album .albums .row .box .circle .img-hover-button img,
 main .container-album .albums .row .box .circle .img-hover-button .background-effect {
     border-radius: 50%;
+}
+
+main .sidebar .info-top .svg-icon a,
+main .sidebar .playlist .name a,
+main .sidebar .plus-album,
+main .sidebar .plus-album.fa-plus-square,
+main .sidebar .info-top .svg-icon a svg,
+main .sidebar .playlist .info .download a svg,
+main .sidebar .playlist .info .download a,
+main .container .top-row .upgrade,
+main .container .nav-top a div,
+main .container-album .albums .row .box .img-hover-button .background-effect {
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
 
 /* inizio hover main  */

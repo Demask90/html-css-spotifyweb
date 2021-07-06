@@ -1,15 +1,13 @@
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 500px), (min-width: 501px) and (max-width: 575px) {
 
     main .sidebar .info-top .logo a:first-child,
-    main .sidebar .playlist-bottom .name,
     main .sidebar .info-top .svg-icon span,
+    main .sidebar .playlist-bottom .name,
     main .sidebar .info-bottom span,
     main .sidebar .info-bottom hr,
-    main .sidebar h3,
     main .sidebar .plus-album,
-    .footer-left a img,
-    .footer-left .heart-folder,
-    .footer-right .progress-bar-volume {
+    main .sidebar h3 {
         display: none;
     }
 
@@ -22,7 +20,7 @@
     }
 
     main .sidebar .playlist-bottom, 
-    main .sidebar .info-top{
+    main .sidebar .info-top {
         margin-left: 0px;
     }
 
@@ -30,7 +28,7 @@
         padding: 5px 0 0 3px;
     }
 
-    main .sidebar .info-bottom {
+    main .sidebar .playlist-bottom .info-bottom {
         margin: 5px 0 0 12px;
     }
 
@@ -41,16 +39,26 @@
         filter: invert(58%) sepia(90%) saturate(3428%) hue-rotate(84deg) brightness(124%) contrast(120%);
     }
 
+    main .sidebar .info-top .svg-icon a svg,
+    main .container-album .albums .row,
+    main .sidebar .playlist-bottom .info-bottom a svg {
+        flex-basis: 100%;
+    }
+
     main .sidebar .playlist-bottom {
         justify-content: flex-end;
         overflow:visible;
         margin-top: 3px;
     }
 
-    main .sidebar .info-top .svg-icon a svg,
-    main .container-album .albums .row,
-    main .sidebar .playlist-bottom .info-bottom a svg {
-        flex-basis: 100%;
+}
+
+@media screen and (max-width: 500px) {
+
+    .footer-left a img,
+    .footer-left .heart-folder,
+    .footer-right .progress-bar-volume {
+        display: none;
     }
 
     main .container .top-row .upgrade {
@@ -59,10 +67,6 @@
 
     main .container .top-row .upgrade:hover {
         font-size: 0.8em;
-    }
-
-    main .container-album .albums .row .box .active .img-hover-button .fa-play-circle {
-        font-size: 2.5em;
     }
 
     .footer-left #text-side-picture {
@@ -87,7 +91,7 @@
     }
 
     .footer-right .volume .fa-volume-up {
-        margin: 0 10px 15px 0;
+        margin: 10px 10px 0;
     }
 
     .footer-right .volume:hover .progress-bar-volume-mobile {
@@ -98,55 +102,6 @@
 
 @media screen and (min-width:501px) and (max-width: 575px) {
 
-    main .container {
-        width: calc(100% - 50px);
-    }
-
-    main .sidebar {
-        width: 50px;
-    }
-
-    main .sidebar .playlist-bottom, 
-    main .sidebar .info-top {
-        margin-left: 0px;
-    }
-
-    main .sidebar .info-top .svg-icon a {
-        padding: 5px 0 0 3px;
-    }
-
-    main .sidebar .info-top .logo a:last-child {
-        display: inline-block;
-        width: 100%;
-        padding: 5px;
-        filter: invert(58%) sepia(90%) saturate(3428%) hue-rotate(84deg) brightness(124%) contrast(120%);
-    }
-    
-    main .sidebar .info-top .logo a:first-child,
-    main .sidebar .info-top .svg-icon span,
-    main .sidebar .playlist-bottom .name,
-    main .sidebar .info-bottom span,
-    main .sidebar .info-bottom hr,
-    main .sidebar .plus-album,
-    main .sidebar h3 {
-        display: none;
-    }
-
-    main .container-album .albums .row,
-    main .sidebar .playlist-bottom .info-bottom a svg,
-    main .sidebar .info-top .svg-icon a svg {
-        flex-basis: 100%;
-    }
-
-    main .sidebar .playlist-bottom {
-        justify-content: flex-end;
-        overflow:visible;
-        margin-top: 3px;
-    }
-
-    main .sidebar .playlist-bottom .info-bottom {
-        margin: 5px 0 0 12px;
-    }
 
     main .container .top-row .upgrade {
         font-size: 0.8em;
@@ -154,10 +109,6 @@
 
     main .container .top-row .upgrade:hover {
         font-size: 0.9em;
-    }
-
-    main .container-album .albums .row .box .active .img-hover-button .fa-play-circle {
-        font-size: 3.5em;
     }
 
     .footer-left #text-side-picture {
@@ -181,85 +132,56 @@
 
 }
 
-@media screen and (min-width: 576px) and (max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 767px), (min-width: 768px) and (max-width: 991px)  {
 
     main .sidebar {
         width: 175px;
+    }
+
+    main .sidebar .playlist-bottom .info-bottom .download a svg,
+    main .sidebar .info-top .svg-icon a svg {
+        width: 22.5%;
     }
 
     main .sidebar .info-top .logo a:first-child {
         width: 90%;
     }
 
-    main .sidebar .info-bottom .download a svg, 
-    main .sidebar .info-top .svg-icon a svg {
-        width: 22.5%;
-    }
-
-    main .sidebar .info-bottom .profile a svg {
+    main .sidebar .playlist-bottom .info-bottom .profile a svg {
         width: 17%;
-    }    
-
+    }
+    
     main .container {
         width: calc(100% - 175px);
     }
 
+    .footer-right .icon-footer{
+        flex-wrap: nowrap;
+    } 
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
     main .container-album .albums .row {
         flex-basis: 100%;
-    }
-
-    main .container-album .albums .row .box .active .img-hover-button .fa-play-circle {
-        font-size: 3.5em;
     }
 
     .footer-left #text-side-picture {
         font-size: 0.9em;
     }
 
-    .footer-right .icon-footer{
-        flex-wrap: nowrap;
-    } 
-
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    
-    main .sidebar {
-        width: 175px;
-    }
-
-    main .sidebar .info-bottom .download a svg, 
-    main .sidebar .info-top .svg-icon a svg {
-        width: 22.5%;
-    }
-
-    main .sidebar .info-top .logo a:first-child {
-        width: 90%;
-    }
-
-    main .sidebar .info-bottom .profile a svg {
-        width: 17%;
-    } 
-
-    main .container {
-        width: calc(100% - 175px);
-    }
+@media screen and (min-width: 768px) and (max-width: 991px)  {
 
     main .container-album .albums .row {
         flex-basis: calc(100% / 2);
     }
 
-    main .container-album .albums .row .box .active .img-hover-button .fa-play-circle {
-        font-size: 2.5em;
-    }
-
-    .footer-right .icon-footer {
-        flex-wrap: nowrap;
-    }
-
 }
 
-@media screen and (min-width:992px) {
+@media screen and (min-width: 992px) {
 
     .footer-right .icon-footer{
         flex-wrap: nowrap;
@@ -267,10 +189,11 @@
 
 }
 
-@media screen and (max-height:580px) {
+@media screen and (max-height: 580px) {
 
     main .container .top-row {
         display: none;
     }
+
 }
 

@@ -100,7 +100,7 @@ main .sidebar .active {
 }
 
 main .sidebar .info-top,
-main .sidebar .playlist-bottom {
+main .sidebar .playlist {
     margin-left: 20px;
 }
 
@@ -119,10 +119,12 @@ main .sidebar .info-top .logo a:last-child {
 
 main .sidebar .info-top .svg-icon a {
     padding: 5px 0;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
 
 main .sidebar .info-top .svg-icon a svg,
-main .sidebar .info-bottom .download a svg {
+main .sidebar .info .download a svg {
     filter: invert(59%) sepia(1%) saturate(2859%) hue-rotate(0deg) brightness(86%) contrast(84%);
 }
 
@@ -139,6 +141,8 @@ main .sidebar .plus-album {
     margin: 5px 0 0 20px;
     font-size: 1.1em;
     color: white;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
 
 main .sidebar .fa-plus-square {
@@ -146,33 +150,37 @@ main .sidebar .fa-plus-square {
     padding-right: 5px;
 }
 
-main .sidebar .playlist-bottom {
+main .sidebar .playlist {
     height: 100%;
     overflow: auto;
 }
 
-main .sidebar .playlist-bottom .name{
+main .sidebar .playlist .name{
     min-height: 300px;
     margin-top: 2px;
 }
 
-main .sidebar .playlist-bottom .name .active {
+main .sidebar .playlist .name .active {
     padding: 12px 0;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
 
-main .sidebar .playlist-bottom .info-bottom {
+main .sidebar .playlist .info {
     overflow-y: hidden;
 }
 
-main .sidebar .playlist-bottom .info-bottom .download a svg {
+main .sidebar .playlist .info .download a svg {
     width: 15%;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
 
-main .sidebar .playlist-bottom .info-bottom hr {
+main .sidebar .playlist .info hr {
     margin: 5px 20px 5px 0;
 }
 
-main .sidebar .playlist-bottom .info-bottom .profile a svg {
+main .sidebar .playlist .info .profile a svg {
     border-radius: 50%;
     background-color: black;
     margin: 6px 10px 6px 0;
@@ -204,14 +212,16 @@ main .container .top-row .upgrade {
     padding: 15px 50px;
     top: 18px;
     right: 5px;
-    transition-duration: 0.2s;
+    transition-duration: 0.4s;
     transition-timing-function: ease;
 }
 
-main .container .nav-top div {
+main .container .nav-top a div {
     margin: 20px 8px;
     padding-bottom: 3px;
     border-bottom: 3px solid transparent;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
 
 main .container-album .albums .row .box, 
@@ -240,6 +250,7 @@ main .container-album .albums .row .box .circle,
 main .container-album .albums .row .box .img-hover-button,
 main .container-album .albums .row .box img {
     width: 100%;
+
 }
 
 main .container-album .albums .row .box h4 {
@@ -269,6 +280,8 @@ main .container-album .albums .row .box .img-hover-button .background-effect {
     left: 0;
     width: 100%;
     height: 100%;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
 }
 
 main .container-album .text-bottom-title {
@@ -283,20 +296,24 @@ main .container-album .albums .row .box .circle .img-hover-button .background-ef
 /* inizio hover main  */
 
 main .sidebar .info-top .svg-icon a:hover,
-main .sidebar .playlist-bottom .name a:hover,
+main .sidebar .playlist .name a:hover,
 main .sidebar .plus-album:hover,
 main .sidebar .plus-album:hover .fa-plus-square,
 main .sidebar .info-top .svg-icon a:hover svg,
-main .sidebar .playlist-bottom .info-bottom .download a:hover {
+main .sidebar .playlist .info .download a:hover svg,
+main .sidebar .playlist .info .download a:hover,
+main .container .top-row .upgrade:hover,
+main .container .nav-top a div:hover,
+main .container-album .albums .row .box .img-hover-button:hover .background-effect {
     transition-duration: 0.4s;
     transition-timing-function: ease;
 }
 
-main .sidebar .playlist-bottom .info-bottom a:hover{
+main .sidebar .playlist .info .download a:hover{
     color:white;
 }
 
-main .sidebar .playlist-bottom .name a:hover,
+main .sidebar .playlist .name a:hover,
 main .sidebar .info-top .svg-icon a:hover,
 main .sidebar .plus-album:hover {
     color: white;
@@ -313,16 +330,10 @@ main .sidebar .plus-album:hover .fa-plus-square {
 }
 
 main .sidebar .info-top .svg-icon a:hover svg,
-main .sidebar .playlist-bottom .info-bottom a:hover svg {
+main .sidebar .playlist .info .download a:hover svg,
+main .sidebar .playlist .info .profile a:hover svg {
     filter: none;
 }
-
-main .container .top-row .upgrade:hover,
-main .container .nav-top div:hover,
-main .container-album .albums .row .box .img-hover-button:hover .background-effect {
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-}  
 
 main .container .top-row .upgrade:hover {
     color: green;

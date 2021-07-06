@@ -3,9 +3,9 @@
 
     main .sidebar .info-top .logo a:first-child,
     main .sidebar .info-top .svg-icon span,
-    main .sidebar .playlist-bottom .name,
-    main .sidebar .info-bottom span,
-    main .sidebar .info-bottom hr,
+    main .sidebar .playlist .name,
+    main .sidebar .info span,
+    main .sidebar .info hr,
     main .sidebar .plus-album,
     main .sidebar h3 {
         display: none;
@@ -19,7 +19,7 @@
         width: 50px;
     }
 
-    main .sidebar .playlist-bottom, 
+    main .sidebar .playlist, 
     main .sidebar .info-top {
         margin-left: 0px;
     }
@@ -28,7 +28,7 @@
         padding: 5px 0 0 3px;
     }
 
-    main .sidebar .playlist-bottom .info-bottom {
+    main .sidebar .playlist .info {
         margin: 5px 0 0 12px;
     }
 
@@ -41,11 +41,11 @@
 
     main .sidebar .info-top .svg-icon a svg,
     main .container-album .albums .row,
-    main .sidebar .playlist-bottom .info-bottom a svg {
+    main .sidebar .playlist .info a svg {
         flex-basis: 100%;
     }
 
-    main .sidebar .playlist-bottom {
+    main .sidebar .playlist {
         justify-content: flex-end;
         overflow:visible;
         margin-top: 3px;
@@ -138,7 +138,7 @@
         width: 175px;
     }
 
-    main .sidebar .playlist-bottom .info-bottom .download a svg,
+    main .sidebar .playlist .info .download a svg,
     main .sidebar .info-top .svg-icon a svg {
         width: 22.5%;
     }
@@ -147,7 +147,7 @@
         width: 90%;
     }
 
-    main .sidebar .playlist-bottom .info-bottom .profile a svg {
+    main .sidebar .playlist .info .profile a svg {
         width: 17%;
     }
     
